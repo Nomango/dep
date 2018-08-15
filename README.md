@@ -5,6 +5,12 @@
   <a href="https://goreportcard.com/report/github.com/golang/dep"><img src="https://goreportcard.com/badge/github.com/golang/dep" /></a>
 </p>
 
+## Changes !!!
+
+将 `golang.org` 和 `google.golang.org` 的一些包地址替换成了 Github 上的仓库地址，解决了国内使用 `dep` 添加一些包时的 “网速太差” 问题 :)
+
+自行编译哈。
+
 ## Dep
 
 `dep` is a dependency management tool for Go. It requires Go 1.9 or newer to compile.

@@ -680,6 +680,14 @@ func (dc *deductionCoordinator) deduceKnownPaths(path string) (pathDeduction, er
 		}, nil
 	}
 
+	// Try mirrors
+	if pd, ok := dc.deduceMirrorPaths(path, u); ok {
+		fmt.Println("Found mirror address:", path)
+		return pd, nil
+	}
+
+	fmt.Println("Mirror address not found:", path)
+
 	// Next, try the vcs extension-based (infix) matcher
 	exm := vcsExtensionDeducer{regexp: vcsExtensionRegex}
 	if root, err := exm.deduceRoot(path); err == nil {
@@ -695,6 +703,45 @@ func (dc *deductionCoordinator) deduceKnownPaths(path string) (pathDeduction, er
 	}
 
 	return pathDeduction{}, errNoKnownPathMatch
+}
+
+func (dc *deductionCoordinator) deduceMirrorPaths(path string, url *url.URL) (pathDeduction, bool) {
+	schemes := []string{"https", "http"}
+	mirrors := map[string]string{
+		// golang.org/x
+		"golang.org/x/blog":   "github.com/golang/blog",
+		"golang.org/x/crypto": "github.com/golang/crypto",
+		"golang.org/x/exp":    "github.com/golang/exp",
+		"golang.org/x/image":  "github.com/golang/image",
+		"golang.org/x/mobile": "github.com/golang/mobile",
+		"golang.org/x/net":    "github.com/golang/net",
+		"golang.org/x/sys":    "github.com/golang/sys",
+		"golang.org/x/talks":  "github.com/golang/talks",
+		"golang.org/x/text":   "github.com/golang/text",
+		"golang.org/x/tools":  "github.com/golang/tools",
+		"golang.org/x/oauth2": "github.com/golang/oauth2",
+		// google.golang.org
+		"google.golang.org/grpc":     "github.com/grpc/grpc-go",
+		"google.golang.org/genproto": "github.com/google/go-genproto",
+		"google.golang.org/api":      "github.com/google/google-api-go-client",
+	}
+	for root, source := range mirrors {
+		if strings.HasPrefix(path, root) {
+			i := strings.Index(source, "/")
+			url.Host = source[:i]
+			url.Path = source[i:]
+			mb := make(maybeSources, len(schemes))
+			for k, scheme := range schemes {
+				url.Scheme = scheme
+				mb[k] = maybeGitSource{url: url}
+			}
+			return pathDeduction{
+				root: root,
+				mb:   mb,
+			}, true
+		}
+	}
+	return pathDeduction{}, false
 }
 
 type httpMetadataDeducer struct {
