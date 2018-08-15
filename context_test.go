@@ -15,7 +15,7 @@ import (
 	"testing"
 	"unicode"
 
-	"github.com/golang/dep/internal/test"
+	"github.com/nomango/dep/internal/test"
 )
 
 func discardLogger() *log.Logger {

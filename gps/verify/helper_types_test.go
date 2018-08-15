@@ -5,8 +5,8 @@
 package verify
 
 import (
-	"github.com/golang/dep/gps"
-	"github.com/golang/dep/gps/pkgtree"
+	"github.com/nomango/dep/gps"
+	"github.com/nomango/dep/gps/pkgtree"
 )
 
 // mkPI creates a ProjectIdentifier with the ProjectRoot as the provided

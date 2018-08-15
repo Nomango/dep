@@ -12,9 +12,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/golang/dep"
-	"github.com/golang/dep/gps"
-	"github.com/golang/dep/internal/importers/base"
+	"github.com/nomango/dep"
+	"github.com/nomango/dep/gps"
+	"github.com/nomango/dep/internal/importers/base"
 	"github.com/pkg/errors"
 )
 

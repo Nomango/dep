@@ -9,7 +9,7 @@ import (
 
 	_ "varied/_secondorder"
 
-	"github.com/golang/dep/gps"
+	"github.com/nomango/dep/gps"
 )
 
 var (

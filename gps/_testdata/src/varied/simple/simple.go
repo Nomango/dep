@@ -7,7 +7,7 @@ package simple
 import (
 	"go/parser"
 
-	"github.com/golang/dep/gps"
+	"github.com/nomango/dep/gps"
 )
 
 var (

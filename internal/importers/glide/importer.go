@@ -12,10 +12,10 @@ import (
 	"path"
 	"path/filepath"
 
-	"github.com/golang/dep"
-	"github.com/golang/dep/gps"
-	"github.com/golang/dep/internal/fs"
-	"github.com/golang/dep/internal/importers/base"
+	"github.com/nomango/dep"
+	"github.com/nomango/dep/gps"
+	"github.com/nomango/dep/internal/fs"
+	"github.com/nomango/dep/internal/importers/base"
 	"github.com/pkg/errors"
 	"gopkg.in/yaml.v2"
 )

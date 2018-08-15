@@ -15,8 +15,8 @@ import (
 	"sync/atomic"
 
 	"github.com/armon/go-radix"
-	"github.com/golang/dep/gps/paths"
-	"github.com/golang/dep/gps/pkgtree"
+	"github.com/nomango/dep/gps/paths"
+	"github.com/nomango/dep/gps/pkgtree"
 	"github.com/pkg/errors"
 )
 

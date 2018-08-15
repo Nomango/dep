@@ -724,6 +724,8 @@ func (dc *deductionCoordinator) deduceMirrorPaths(path string, url *url.URL) (pa
 		"google.golang.org/grpc":     "github.com/grpc/grpc-go",
 		"google.golang.org/genproto": "github.com/google/go-genproto",
 		"google.golang.org/api":      "github.com/google/google-api-go-client",
+		// cloud.google.com
+		"cloud.google.com/go/compute/metadata": "github.com/GoogleCloudPlatform/gcloud-golang",
 	}
 	for root, source := range mirrors {
 		if strings.HasPrefix(path, root) {

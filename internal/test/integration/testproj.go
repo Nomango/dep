@@ -16,7 +16,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/golang/dep/internal/test"
+	"github.com/nomango/dep/internal/test"
 	"github.com/pkg/errors"
 )
 

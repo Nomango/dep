@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/golang/dep/gps"
-	"github.com/golang/dep/gps/pkgtree"
+	"github.com/nomango/dep/gps"
+	"github.com/nomango/dep/gps/pkgtree"
 )
 
 type lockUnsatisfactionDimension uint8

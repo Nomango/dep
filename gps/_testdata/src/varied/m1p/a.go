@@ -7,7 +7,7 @@ package m1p
 import (
 	"sort"
 
-	"github.com/golang/dep/gps"
+	"github.com/nomango/dep/gps"
 )
 
 var (

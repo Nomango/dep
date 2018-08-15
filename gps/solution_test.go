@@ -13,7 +13,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/golang/dep/internal/test"
+	"github.com/nomango/dep/internal/test"
 )
 
 var basicResult solution

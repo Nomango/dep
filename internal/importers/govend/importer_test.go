@@ -11,10 +11,10 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/golang/dep"
-	"github.com/golang/dep/gps"
-	"github.com/golang/dep/internal/importers/importertest"
-	"github.com/golang/dep/internal/test"
+	"github.com/nomango/dep"
+	"github.com/nomango/dep/gps"
+	"github.com/nomango/dep/internal/importers/importertest"
+	"github.com/nomango/dep/internal/test"
 	"github.com/pkg/errors"
 )
 

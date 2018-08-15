@@ -13,10 +13,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/golang/dep"
-	"github.com/golang/dep/gps"
-	"github.com/golang/dep/gps/pkgtree"
-	"github.com/golang/dep/internal/fs"
+	"github.com/nomango/dep"
+	"github.com/nomango/dep/gps"
+	"github.com/nomango/dep/gps/pkgtree"
+	"github.com/nomango/dep/internal/fs"
 	"github.com/pkg/errors"
 )
 

@@ -11,12 +11,12 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/golang/dep"
-	"github.com/golang/dep/gps"
-	"github.com/golang/dep/gps/paths"
-	"github.com/golang/dep/gps/pkgtree"
-	fb "github.com/golang/dep/internal/feedback"
-	"github.com/golang/dep/internal/fs"
+	"github.com/nomango/dep"
+	"github.com/nomango/dep/gps"
+	"github.com/nomango/dep/gps/paths"
+	"github.com/nomango/dep/gps/pkgtree"
+	fb "github.com/nomango/dep/internal/feedback"
+	"github.com/nomango/dep/internal/fs"
 	"github.com/pkg/errors"
 )
 
